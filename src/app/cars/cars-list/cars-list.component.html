@@ -1,0 +1,12 @@
+<button routerLink="/cars-add">Add a car</button>
+<ul *ngIf="cars">
+  <li *ngFor="let car of cars">
+    <a routerLink="/cars/{{car.id}}">
+      {{car.id}}: {{car.brand}} {{car.name}}
+    </a>
+    <button routerLink="/cars-update/{{car.id}}">Update</button>
+    <button (click)="delete(car.id)">Delete</button>
+  </li>
+</ul>
+<h4 *ngIf="!cars">Loading data ...</h4>
+

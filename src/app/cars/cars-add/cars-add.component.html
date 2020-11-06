@@ -1,0 +1,31 @@
+<button routerLink="/cars">Back</button>
+
+<form [formGroup]="carsForm" (ngSubmit)="save()">
+
+  <label>
+    Brand:
+    <input type="text" formControlName="Brand">
+  </label>
+  <label>
+    Name:
+    <input type="text" formControlName="Name">
+  </label>
+  <label>
+    Body:
+    <input type="text" formControlName="Body">
+  </label>
+  <label>
+    Color:
+    <input type="text" formControlName="Color">
+  </label>
+  <label>
+    Year:
+    <input type="text" formControlName="ModelYear">
+  </label>
+  <label>
+    Price:
+    <input type="text" formControlName="Price">
+  </label>
+<button type="submit">Save</button>
+
+</form>

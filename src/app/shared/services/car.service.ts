@@ -29,31 +29,31 @@ export class CarService {
   {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
-    return this.http.get<Car[]>(this.apiUrl);
+    return this.http.get<Car[]>(this.apiUrl, httpOptions);
   }
 
   addCar(car: Car): Observable<Car>
   {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
-    return this.http.post<Car>(this.apiUrl, car);
+    return this.http.post<Car>(this.apiUrl, car, httpOptions);
   }
 
   getCarById(id: number): Observable<Car> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
-    return this.http.get<Car>(this.apiUrl + '/' + id);
+    return this.http.get<Car>(this.apiUrl + '/' + id, httpOptions);
   }
 
   updateCar(car: Car): Observable<any> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
-    return this.http.put<Car>(this.apiUrl + '/' + car.id, car);
+    return this.http.put<Car>(this.apiUrl + '/' + car.id, car, httpOptions);
   }
 
   deleteCar(id: number): Observable<any> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
-    return this.http.delete(this.apiUrl + '/' + id);
+    return this.http.delete(this.apiUrl + '/' + id), httpOptions;
   }
 }

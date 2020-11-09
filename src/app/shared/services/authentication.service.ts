@@ -4,9 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
@@ -14,7 +12,7 @@ export class AuthenticationService {
   login(username: string, password: string): Observable<boolean> {
     return this.http.post<any>(environment.apiUrl + '/token', { username, password })
       .pipe(map(response => {
-        const token = response.token && response;
+        const token = response.token;
         // login successful if there's a jwt token in the response
         if (token) {
           // store username and jwt token in local storage to keep user logged in between page refreshes

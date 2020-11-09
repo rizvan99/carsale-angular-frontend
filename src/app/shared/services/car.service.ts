@@ -11,9 +11,6 @@ const httpOptions = {
   })
 };
 
-@Injectable({
-  providedIn: 'root'
-})
 
 @Injectable()
 export class CarService {
@@ -27,8 +24,11 @@ export class CarService {
 
   getCars(): Observable<Car[]>
   {
+    // authorization
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+
+    // getting cars from api
     return this.http.get<Car[]>(this.apiUrl, httpOptions);
   }
 
@@ -54,6 +54,6 @@ export class CarService {
   deleteCar(id: number): Observable<any> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
-    return this.http.delete(this.apiUrl + '/' + id), httpOptions;
+    return this.http.delete(this.apiUrl + '/' + id, httpOptions);
   }
 }

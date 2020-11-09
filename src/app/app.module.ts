@@ -14,6 +14,10 @@ import { CarsUpdateComponent } from './cars/cars-update/cars-update.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login/login.component';
 
+import {AuthenticationService} from './shared/services/authentication.service';
+import {CarService} from './shared/services/car.service';
+import {AuthGuard} from './authentication/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +33,13 @@ import { LoginComponent } from './login/login/login.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService,
+    CarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

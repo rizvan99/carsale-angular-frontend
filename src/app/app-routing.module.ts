@@ -8,6 +8,7 @@ import {CarsAddComponent} from './cars/cars-add/cars-add.component';
 import {CarsUpdateComponent} from './cars/cars-update/cars-update.component';
 import {LoginComponent} from './login/login/login.component';
 import {AuthGuard} from './authentication/auth.guard';
+import {BodyListComponent} from './body/body-list/body-list.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'cars/:id', component: CarsDetailComponent, canActivate: [AuthGuard]},
   { path: 'cars-add', component: CarsAddComponent, canActivate: [AuthGuard]},
   { path: 'cars-update/:id', component: CarsUpdateComponent, canActivate: [AuthGuard]},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'bodies', component: BodyListComponent}
 ];
 @NgModule({
   declarations: [],

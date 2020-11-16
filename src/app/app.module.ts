@@ -17,6 +17,8 @@ import { LoginComponent } from './login/login/login.component';
 import {AuthenticationService} from './shared/services/authentication.service';
 import {CarService} from './shared/services/car.service';
 import {AuthGuard} from './authentication/auth.guard';
+import { BodyAddComponent } from './body/body-add/body-add.component';
+import { BodyListComponent } from './body/body-list/body-list.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,11 @@ import {AuthGuard} from './authentication/auth.guard';
     NavbarComponent,
     WelcomeComponent,
     CarsDetailComponent,
-    CarsAddComponent,
+    //CarsAddComponent,
     CarsUpdateComponent,
     LoginComponent,
+    BodyAddComponent,
+    BodyListComponent,
   ],
   imports: [
     BrowserModule,

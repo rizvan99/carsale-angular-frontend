@@ -3,8 +3,9 @@
 <div *ngIf="car">
   <h2>{{car.id}}</h2>
   <h3>{{car.brand}} {{car.name}}</h3>
-  <h4>{{car.body}}, {{car.color}}</h4>
+  <h4>{{car.body.type}}, {{car.color}}</h4>
   <h4>Year: {{car.modelYear}}</h4>
   <h4>Price: {{car.price}}</h4>
 </div>
 <div *ngIf="!car">Car not found</div>
+

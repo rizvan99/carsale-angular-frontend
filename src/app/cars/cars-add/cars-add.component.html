@@ -1,5 +1,6 @@
 <button routerLink="/cars">Back</button>
 
+
 <form [formGroup]="carsForm" (ngSubmit)="save()">
 
   <label>
@@ -11,8 +12,14 @@
     <input type="text" formControlName="Name">
   </label>
 
-  // EXAMPLE OF RELATION
-  // to do
+  <label>Body type
+  <select formControlName="BodyId" id="bodies">
+    <option *ngFor="let body of bodies;"
+          [value]="body.id">
+      {{body.type}}
+    </option>
+  </select>
+  </label>
 
   <label>
     Color:
@@ -26,6 +33,6 @@
     Price:
     <input type="text" formControlName="Price">
   </label>
-<button type="submit">Save</button>
+  <button type="submit">Save</button>
 
 </form>

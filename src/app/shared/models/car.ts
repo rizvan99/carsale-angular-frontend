@@ -5,6 +5,7 @@ export interface Car {
   name: string;
   brand: string;
   body: BodyType;
+  bodyId: number;
   price: number;
   color: string;
   modelYear: string;

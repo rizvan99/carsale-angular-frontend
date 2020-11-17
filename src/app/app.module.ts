@@ -8,7 +8,6 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CarsDetailComponent } from './cars/cars-detail/cars-detail.component';
-import { CarsAddComponent } from './cars/cars-add/cars-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CarsUpdateComponent } from './cars/cars-update/cars-update.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -19,6 +18,7 @@ import {CarService} from './shared/services/car.service';
 import {AuthGuard} from './authentication/auth.guard';
 import { BodyAddComponent } from './body/body-add/body-add.component';
 import { BodyListComponent } from './body/body-list/body-list.component';
+import { CarsAddComponent } from './cars/cars-add/cars-add.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +27,11 @@ import { BodyListComponent } from './body/body-list/body-list.component';
     NavbarComponent,
     WelcomeComponent,
     CarsDetailComponent,
-    //CarsAddComponent,
     CarsUpdateComponent,
     LoginComponent,
     BodyAddComponent,
     BodyListComponent,
+    CarsAddComponent,
   ],
   imports: [
     BrowserModule,
